@@ -1,0 +1,143 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>SudipTina</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2{font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+p {line-height: 2}
+.bgimg, .bgimg2 {
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.bgimg {background-image: url("couple2.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;}
+.bgimg2 {background-image: url("couple4.jpg")}
+.w3-quarter img{margin-bottom: -6px; cursor: pointer}
+.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+</style>
+</head>
+<body>
+
+<!-- Header / Home-->
+<header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-text-white w3-center">
+    <h1 class="w3-jumbo">Sudip & Tina</h1>
+    <h2>Since</h2>
+    <h2><b>05.01.2018</b></h2>
+  </div>
+</header>
+
+<!-- Navbar (sticky bottom) -->
+<div class="w3-bottom w3-hide-small">
+  <div class="w3-bar w3-white w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
+    <a href="#home" style="width:25%" class="w3-bar-item w3-button">Home</a>
+    <a href="#us" style="width:25%" class="w3-bar-item w3-button">Sudip & Tina</a>
+    <a href="#wedding" style="width:25%" class="w3-bar-item w3-button">Contact</a>
+    <a href="#rsvp" style="width:25%" class="w3-bar-item w3-button w3-hover-black">Gallery</a>
+  </div>
+</div>
+
+<!-- About / Jane And John -->
+<div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min" id="us">
+  <div class="w3-content">
+    <h1 class="w3-center w3-text-grey"><b>Sudip & Tina</b></h1>
+    <img class="w3-round w3-grayscale-min" src="couple3.jpg" style="width:100%;margin:32px 0">
+    <p><i>Every moment spent with you is like a beautiful dream come true</i>
+    </p><br>
+    <p class="w3-center"><a href="#rsvp" class="w3-button w3-black w3-round w3-padding-large w3-large">Photos</a></p>
+  </div>
+</div>
+
+<!-- Background photo -->
+<div class="w3-display-container bgimg2">
+  <div class="w3-display-middle w3-text-white w3-center">
+    <h1 class="w3-jumbo"> </h1><br>
+    <br>
+    <br>
+    <h2>Three things will last forever - faith, hope and love and greatest of these is LOVE</h2>
+  </div>
+</div>
+
+<!-- Wedding information -->
+<div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center" id="wedding">
+  <div class="w3-content">
+    <h1 class="w3-text-grey"><b>LOVE</b></h1>
+    <img class="w3-round-large w3-grayscale-min" src="couple1.jpg" style="width:100%;margin:64px 0">
+    <div class="w3-row">
+      <div class="w3-half">
+        <h2>Sudip Evans Costa</h2>
+        <p><a href="https://www.facebook.com/sudipevans/" target="_blank"title="Go to Sudip's FB profile"> Sudip's FB profile </a></p>
+        
+      </div>
+      <div class="w3-half">
+        <h2>Tina Eliza D Costa</h2>
+        <p><a href="https://www.facebook.com/tina.costa.3388" target="_blank" title="Go to Tina's FB profile"> Tina's FB profile </a></p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- Photo grid -->
+  <div class="w3-row w3-grayscale-min"id="rsvp">
+    <div class="w3-quarter">
+      <img src="c1.jpg" style="width:100%" onclick="onClick(this)" alt="Together">
+      <img src="c2.jpg" style="width:100%" onclick="onClick(this)" alt="Love">
+   </div>
+    
+   <div class="w3-quarter">
+      <img src="c3.jpg" style="width:100%" onclick="onClick(this)" alt="enjoy">
+      <img src="c4.jpg" style="width:100%" onclick="onClick(this)" alt="love">
+    </div>
+    
+    <div class="w3-quarter">
+      <img src="c5.jpg" style="width:100%" onclick="onClick(this)" alt="">
+      <img src="c6.jpg" style="width:100%" onclick="onClick(this)" alt="">
+    </div>
+
+    <div class="w3-quarter">
+      <img src="c7.jpg" style="width:100%" onclick="onClick(this)" alt="">
+      <img src="c8.jpg" style="width:100%" onclick="onClick(this)" alt="">
+    </div>
+  </div>
+
+<!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p><a href="mailto:evanscosta1@gmail.com">Send us email</a></p>
+</footer>
+<div class="w3-hide-small" style="margin-bottom:32px"> </div>
+
+<script>
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+</script>
+
+</body>
+</html>
+
+
